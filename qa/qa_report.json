@@ -1,0 +1,3818 @@
+{
+  "project": "AquaBot",
+  "version": "1.0.0",
+  "date": "2026-11-04T11:08:09+00:00",
+  "git": "",
+  "passed": true,
+  "checks": 292,
+  "checks_passed": 292,
+  "wall_s": 157.1,
+  "iterations": [
+    {
+      "iter": 1,
+      "failing": [],
+      "passed": true
+    }
+  ],
+  "nodes": [
+    {
+      "id": "system",
+      "title": "AquaBot v1.0.0",
+      "passed": true,
+      "seconds": 144.74,
+      "results": [
+        {
+          "id": "S-MAS-01",
+          "title": "total mass with full tank",
+          "passed": true,
+          "value": 3193.7,
+          "limit": 3200.0,
+          "detail": "dry 2794 g",
+          "req": "mass_max_g",
+          "fixer": null
+        },
+        {
+          "id": "S-STB-01",
+          "title": "static stability margin, 4-foot stance (all mission configs)",
+          "passed": true,
+          "value": 60.2,
+          "limit": 25.0,
+          "detail": "stand, full tank, arm stowed: 74 mm; stand, empty tank: 74 mm; arm stow, full tank, 100 g payload: 74 mm; arm water_mid, full tank, 100 g payload: 65 mm; arm pick_mid, full tank, 100 g payload: 63 mm; arm water_aim_-30, full tank, 100 g payload: 60 mm; arm water_aim_+0, full tank, 100 g payload: 60 mm; arm water_aim_+30, full tank, 100 g payload: 60 mm",
+          "req": "stability_margin_min",
+          "fixer": null
+        },
+        {
+          "id": "S-STB-02",
+          "title": "crawl gait: planned CoG margin inside support (3+ feet) \u2265 12 mm",
+          "passed": true,
+          "value": 20.0,
+          "limit": 12.0,
+          "detail": "sampled 720 instants incl. turning",
+          "req": "",
+          "fixer": "crawl_margin"
+        },
+        {
+          "id": "S-TRQ-01",
+          "title": "leg static torque safety factor (3-foot crawl support)",
+          "passed": true,
+          "value": 2.76,
+          "limit": 2.0,
+          "detail": "FR lifted=FL \u03c4=[0.711, 0.077, 0.694] N\u00b7m (Fz=15.4 N)",
+          "req": "torque_sf_static_min",
+          "fixer": null
+        },
+        {
+          "id": "S-TRQ-02",
+          "title": "arm static torque SF at full horizontal reach + 100 g payload",
+          "passed": true,
+          "value": 2.15,
+          "limit": 2.0,
+          "detail": "shoulder: 0.662 N\u00b7m (SF 3.0), elbow: 0.307 N\u00b7m (SF 6.4), wrist: 0.101 N\u00b7m (SF 2.1)",
+          "req": "torque_sf_static_min",
+          "fixer": null
+        },
+        {
+          "id": "S-PWR-01",
+          "title": "estimated mission runtime on one charge (walking continuously)",
+          "passed": true,
+          "value": 24.0,
+          "limit": 20.0,
+          "detail": "servo rail 4.53 A mean (sim, I\u221d\u03c4) -> P\u224832.6 W from 13.0 Wh usable",
+          "req": "runtime_min",
+          "fixer": null
+        },
+        {
+          "id": "S-PWR-02",
+          "title": "servo rail peak current within 2 \u00d7 10 A UBEC rating",
+          "passed": true,
+          "value": 9.6,
+          "limit": 20.0,
+          "detail": "simulated peak (sum of all servos)",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "sub:body",
+      "title": "Body & chassis",
+      "passed": true,
+      "seconds": 11.9,
+      "results": [
+        {
+          "id": "A-INT-01:body",
+          "title": "exact B-rep interference at nominal pose (OCC boolean)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "",
+          "req": "interference_max_mm3",
+          "fixer": null
+        },
+        {
+          "id": "A-FAS-01:body",
+          "title": "every fastener hole has a coaxial mating hole",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "360 holes matched overall",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:chassis_tub",
+      "title": "chassis_tub",
+      "passed": true,
+      "seconds": 1.12,
+      "results": [
+        {
+          "id": "P-GEO-01:chassis_tub",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:chassis_tub",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "chassis_tub.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:chassis_tub",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 1e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=18104",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:chassis_tub",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            86.0,
+            92.0,
+            180.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:chassis_tub",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 1.977,
+            "p05": 2.98,
+            "median": 3.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:chassis_tub",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:chassis_tub",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 120.8,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:bulkhead_front",
+      "title": "bulkhead_front",
+      "passed": true,
+      "seconds": 0.31,
+      "results": [
+        {
+          "id": "P-GEO-01:bulkhead_front",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:bulkhead_front",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "bulkhead_front.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:bulkhead_front",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 2e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=11228",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:bulkhead_front",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            5.0,
+            90.0,
+            92.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:bulkhead_front",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 2.98,
+            "p05": 4.98,
+            "median": 4.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:bulkhead_front",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:bulkhead_front",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 23.8,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:bulkhead_rear",
+      "title": "bulkhead_rear",
+      "passed": true,
+      "seconds": 0.31,
+      "results": [
+        {
+          "id": "P-GEO-01:bulkhead_rear",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:bulkhead_rear",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "bulkhead_rear.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:bulkhead_rear",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 2e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=11248",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:bulkhead_rear",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            5.0,
+            90.0,
+            92.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:bulkhead_rear",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 2.485,
+            "p05": 4.98,
+            "median": 4.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:bulkhead_rear",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:bulkhead_rear",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 23.1,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:top_deck",
+      "title": "top_deck",
+      "passed": true,
+      "seconds": 0.28,
+      "results": [
+        {
+          "id": "P-GEO-01:top_deck",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:top_deck",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "top_deck.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:top_deck",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 2e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=8196",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:top_deck",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            4.0,
+            92.0,
+            180.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:top_deck",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 1.98,
+            "p05": 3.98,
+            "median": 3.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:top_deck",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:top_deck",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 47.4,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:electronics_tray",
+      "title": "electronics_tray",
+      "passed": true,
+      "seconds": 0.37,
+      "results": [
+        {
+          "id": "P-GEO-01:electronics_tray",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:electronics_tray",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "electronics_tray.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:electronics_tray",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 6e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=10160",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:electronics_tray",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            24.0,
+            63.8,
+            87.2
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:electronics_tray",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 1.476,
+            "p05": 1.478,
+            "median": 2.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:electronics_tray",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:electronics_tray",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 18.5,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:electronics_cover",
+      "title": "electronics_cover",
+      "passed": true,
+      "seconds": 0.16,
+      "results": [
+        {
+          "id": "P-GEO-01:electronics_cover",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:electronics_cover",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "electronics_cover.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:electronics_cover",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=2216",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:electronics_cover",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            26.0,
+            68.4,
+            92.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:electronics_cover",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 1.98,
+            "p05": 1.98,
+            "median": 1.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:electronics_cover",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-G",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:electronics_cover",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 29.2,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "sub:water",
+      "title": "Water system",
+      "passed": true,
+      "seconds": 0.82,
+      "results": [
+        {
+          "id": "S-WAT-01",
+          "title": "usable tank volume (CAD cavity minus bosses & baffle)",
+          "passed": true,
+          "value": 404.5,
+          "limit": 400.0,
+          "detail": "",
+          "req": "tank_ml_min",
+          "fixer": null
+        },
+        {
+          "id": "S-WAT-02",
+          "title": "jet exit speed sensible for ballistic aiming (0.5\u20133 m/s)",
+          "passed": true,
+          "value": 0.943,
+          "limit": "0.5\u20133",
+          "detail": "100.0 ml/min through \u00d81.5 mm",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:tank_body",
+      "title": "tank_body",
+      "passed": true,
+      "seconds": 0.15,
+      "results": [
+        {
+          "id": "P-GEO-01:tank_body",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:tank_body",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "tank_body.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:tank_body",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=4656",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:tank_body",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            46.0,
+            84.0,
+            124.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:tank_body",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 1.98,
+            "p05": 1.98,
+            "median": 2.38,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:tank_body",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-B",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:tank_body",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 94.7,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:tank_lid",
+      "title": "tank_lid",
+      "passed": true,
+      "seconds": 0.17,
+      "results": [
+        {
+          "id": "P-GEO-01:tank_lid",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:tank_lid",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "tank_lid.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:tank_lid",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 0.00012,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=6938",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:tank_lid",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            52.0,
+            84.0,
+            125.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:tank_lid",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 2.38,
+            "p05": 2.38,
+            "median": 2.38,
+            "frac_below_1p2": 0.0089
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:tank_lid",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-B",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:tank_lid",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 42.3,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:fill_cap",
+      "title": "fill_cap",
+      "passed": true,
+      "seconds": 0.11,
+      "results": [
+        {
+          "id": "P-GEO-01:fill_cap",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:fill_cap",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "fill_cap.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:fill_cap",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 0.00038,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=2536",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:fill_cap",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            22.0,
+            30.0,
+            30.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:fill_cap",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 3.48,
+            "p05": 3.48,
+            "median": 15.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:fill_cap",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-B",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:fill_cap",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 9.7,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:pump_peristaltic",
+      "title": "pump_peristaltic",
+      "passed": true,
+      "seconds": 0.03,
+      "results": [
+        {
+          "id": "P-GEO-01:pump_peristaltic",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:pump_peristaltic",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "pump_peristaltic.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:pump_peristaltic",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 62.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:nozzle_brass",
+      "title": "nozzle_brass",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:nozzle_brass",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:nozzle_brass",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "nozzle_brass.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:nozzle_brass",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 2.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "sub:legs",
+      "title": "Legs (\u00d74)",
+      "passed": true,
+      "seconds": 22.06,
+      "results": []
+    },
+    {
+      "id": "parts:leg",
+      "title": "Leg parts",
+      "passed": true,
+      "seconds": 1.81,
+      "results": []
+    },
+    {
+      "id": "part:shoulder_bracket_L",
+      "title": "shoulder_bracket_L",
+      "passed": true,
+      "seconds": 0.23,
+      "results": [
+        {
+          "id": "P-GEO-01:shoulder_bracket_L",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:shoulder_bracket_L",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "shoulder_bracket_L.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:shoulder_bracket_L",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 2e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=5700",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:shoulder_bracket_L",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            35.0,
+            47.8,
+            82.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:shoulder_bracket_L",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 0.98,
+            "p05": 3.68,
+            "median": 10.18,
+            "frac_below_1p2": 0.0222
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:shoulder_bracket_L",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-G",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:shoulder_bracket_L",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 26.8,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:shoulder_bracket_R",
+      "title": "shoulder_bracket_R",
+      "passed": true,
+      "seconds": 0.21,
+      "results": [
+        {
+          "id": "P-GEO-01:shoulder_bracket_R",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:shoulder_bracket_R",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "shoulder_bracket_R.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:shoulder_bracket_R",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 2e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=5700",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:shoulder_bracket_R",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            35.0,
+            47.8,
+            82.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:shoulder_bracket_R",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 0.98,
+            "p05": 3.68,
+            "median": 8.065,
+            "frac_below_1p2": 0.0244
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:shoulder_bracket_R",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-G",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:shoulder_bracket_R",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 26.8,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:femur_L",
+      "title": "femur_L",
+      "passed": true,
+      "seconds": 0.31,
+      "results": [
+        {
+          "id": "P-GEO-01:femur_L",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:femur_L",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "femur_L.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:femur_L",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 3e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=7584",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:femur_L",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            30.0,
+            68.5,
+            126.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:femur_L",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 1.99,
+            "p05": 4.08,
+            "median": 5.98,
+            "frac_below_1p2": 0.0089
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:femur_L",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:femur_L",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 48.2,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:femur_R",
+      "title": "femur_R",
+      "passed": true,
+      "seconds": 0.31,
+      "results": [
+        {
+          "id": "P-GEO-01:femur_R",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:femur_R",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "femur_R.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:femur_R",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 3e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=7584",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:femur_R",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            30.0,
+            68.5,
+            126.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:femur_R",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 0.98,
+            "p05": 4.08,
+            "median": 5.98,
+            "frac_below_1p2": 0.0144
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:femur_R",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:femur_R",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 48.2,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:tibia_L",
+      "title": "tibia_L",
+      "passed": true,
+      "seconds": 0.18,
+      "results": [
+        {
+          "id": "P-GEO-01:tibia_L",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:tibia_L",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "tibia_L.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:tibia_L",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 7e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=5464",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:tibia_L",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            30.0,
+            61.5,
+            116.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:tibia_L",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 2.48,
+            "p05": 5.98,
+            "median": 11.502,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:tibia_L",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:tibia_L",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 24.4,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:tibia_R",
+      "title": "tibia_R",
+      "passed": true,
+      "seconds": 0.18,
+      "results": [
+        {
+          "id": "P-GEO-01:tibia_R",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:tibia_R",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "tibia_R.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:tibia_R",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 7e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=5464",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:tibia_R",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            30.0,
+            61.5,
+            116.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:tibia_R",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 2.48,
+            "p05": 5.98,
+            "median": 11.452,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:tibia_R",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:tibia_R",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 24.4,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:foot_pad",
+      "title": "foot_pad",
+      "passed": true,
+      "seconds": 0.4,
+      "results": [
+        {
+          "id": "P-GEO-01:foot_pad",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:foot_pad",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "foot_pad.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:foot_pad",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 0.00188,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=7996",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:foot_pad",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            22.0,
+            26.0,
+            26.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:foot_pad",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 2.29,
+            "p05": 4.082,
+            "median": 6.76,
+            "frac_below_1p2": 0.0056
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:foot_pad",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "TPU95A",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:foot_pad",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 4.1,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "asm:leg_FL",
+      "title": "Leg FL",
+      "passed": true,
+      "seconds": 5.46,
+      "results": [
+        {
+          "id": "A-INT-01:FL",
+          "title": "exact B-rep interference at nominal pose (OCC boolean)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "",
+          "req": "interference_max_mm3",
+          "fixer": null
+        },
+        {
+          "id": "A-FAS-01:FL",
+          "title": "every fastener hole has a coaxial mating hole",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "360 holes matched overall",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-01:FL",
+          "title": "no self-collision inside joint limits (4\u00d79\u00d79 grid)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "324 poses clear",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-02:FL",
+          "title": "operating envelope collision-free vs body & neighbour leg",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "127 poses; clear",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-03:FL",
+          "title": "joint-limit margin over gait envelope \u2265 3\u00b0",
+          "passed": true,
+          "value": 6.06,
+          "limit": 3.0,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-04:FL",
+          "title": "pick crouch posture inside limits (\u2265 1\u00b0) and collision-free",
+          "passed": true,
+          "value": 1.19,
+          "limit": 1.0,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "asm:leg_FR",
+      "title": "Leg FR",
+      "passed": true,
+      "seconds": 4.77,
+      "results": [
+        {
+          "id": "A-INT-01:FR",
+          "title": "exact B-rep interference at nominal pose (OCC boolean)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "",
+          "req": "interference_max_mm3",
+          "fixer": null
+        },
+        {
+          "id": "A-FAS-01:FR",
+          "title": "every fastener hole has a coaxial mating hole",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "360 holes matched overall",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-01:FR",
+          "title": "no self-collision inside joint limits (4\u00d79\u00d79 grid)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "324 poses clear",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-02:FR",
+          "title": "operating envelope collision-free vs body & neighbour leg",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "127 poses; clear",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-03:FR",
+          "title": "joint-limit margin over gait envelope \u2265 3\u00b0",
+          "passed": true,
+          "value": 6.11,
+          "limit": 3.0,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-04:FR",
+          "title": "pick crouch posture inside limits (\u2265 1\u00b0) and collision-free",
+          "passed": true,
+          "value": 14.64,
+          "limit": 1.0,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "asm:leg_RL",
+      "title": "Leg RL",
+      "passed": true,
+      "seconds": 5.03,
+      "results": [
+        {
+          "id": "A-INT-01:RL",
+          "title": "exact B-rep interference at nominal pose (OCC boolean)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "",
+          "req": "interference_max_mm3",
+          "fixer": null
+        },
+        {
+          "id": "A-FAS-01:RL",
+          "title": "every fastener hole has a coaxial mating hole",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "360 holes matched overall",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-01:RL",
+          "title": "no self-collision inside joint limits (4\u00d79\u00d79 grid)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "324 poses clear",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-02:RL",
+          "title": "operating envelope collision-free vs body & neighbour leg",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "127 poses; clear",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-03:RL",
+          "title": "joint-limit margin over gait envelope \u2265 3\u00b0",
+          "passed": true,
+          "value": 5.15,
+          "limit": 3.0,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-04:RL",
+          "title": "pick crouch posture inside limits (\u2265 1\u00b0) and collision-free",
+          "passed": true,
+          "value": 1.19,
+          "limit": 1.0,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "asm:leg_RR",
+      "title": "Leg RR",
+      "passed": true,
+      "seconds": 4.98,
+      "results": [
+        {
+          "id": "A-INT-01:RR",
+          "title": "exact B-rep interference at nominal pose (OCC boolean)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "",
+          "req": "interference_max_mm3",
+          "fixer": null
+        },
+        {
+          "id": "A-FAS-01:RR",
+          "title": "every fastener hole has a coaxial mating hole",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "360 holes matched overall",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-01:RR",
+          "title": "no self-collision inside joint limits (4\u00d79\u00d79 grid)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "324 poses clear",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-02:RR",
+          "title": "operating envelope collision-free vs body & neighbour leg",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "127 poses; clear",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-03:RR",
+          "title": "joint-limit margin over gait envelope \u2265 3\u00b0",
+          "passed": true,
+          "value": 5.13,
+          "limit": 3.0,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-04:RR",
+          "title": "pick crouch posture inside limits (\u2265 1\u00b0) and collision-free",
+          "passed": true,
+          "value": 14.64,
+          "limit": 1.0,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "sub:arm",
+      "title": "Arm & gripper",
+      "passed": true,
+      "seconds": 7.78,
+      "results": [
+        {
+          "id": "A-INT-01:arm",
+          "title": "exact B-rep interference at nominal pose (OCC boolean)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "",
+          "req": "interference_max_mm3",
+          "fixer": null
+        },
+        {
+          "id": "A-FAS-01:arm",
+          "title": "every fastener hole has a coaxial mating hole",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "360 holes matched overall",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-01:arm",
+          "title": "adjacent arm links collision-free inside joint limits (7\u00d78\u00d77\u00d72)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "784 poses clear",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-KIN-02:arm",
+          "title": "mission arm poses collision-free vs whole robot",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "6 poses; clear",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "asm:arm_base",
+      "title": "Pedestal + turntable",
+      "passed": true,
+      "seconds": 0.54,
+      "results": []
+    },
+    {
+      "id": "part:arm_pedestal",
+      "title": "arm_pedestal",
+      "passed": true,
+      "seconds": 0.19,
+      "results": [
+        {
+          "id": "P-GEO-01:arm_pedestal",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:arm_pedestal",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "arm_pedestal.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:arm_pedestal",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 5e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=5700",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:arm_pedestal",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            37.0,
+            42.5,
+            68.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:arm_pedestal",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 2.274,
+            "p05": 2.276,
+            "median": 2.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:arm_pedestal",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-G",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:arm_pedestal",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 26.0,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:arm_bearing_plate",
+      "title": "arm_bearing_plate",
+      "passed": true,
+      "seconds": 0.09,
+      "results": [
+        {
+          "id": "P-GEO-01:arm_bearing_plate",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:arm_bearing_plate",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "arm_bearing_plate.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:arm_bearing_plate",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 5e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=3560",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:arm_bearing_plate",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            11.6,
+            37.0,
+            68.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:arm_bearing_plate",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 1.476,
+            "p05": 1.476,
+            "median": 3.48,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:arm_bearing_plate",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-G",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:arm_bearing_plate",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 7.6,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:arm_turntable",
+      "title": "arm_turntable",
+      "passed": true,
+      "seconds": 0.27,
+      "results": [
+        {
+          "id": "P-GEO-01:arm_turntable",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:arm_turntable",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "arm_turntable.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:arm_turntable",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 0.00017,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=9728",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:arm_turntable",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            55.0,
+            64.0,
+            70.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:arm_turntable",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 0.98,
+            "p05": 2.972,
+            "median": 4.98,
+            "frac_below_1p2": 0.0156
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:arm_turntable",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-G",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:arm_turntable",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 24.1,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "asm:arm_links",
+      "title": "Upper arm + forearm",
+      "passed": true,
+      "seconds": 0.5,
+      "results": []
+    },
+    {
+      "id": "part:upper_arm",
+      "title": "upper_arm",
+      "passed": true,
+      "seconds": 0.24,
+      "results": [
+        {
+          "id": "P-GEO-01:upper_arm",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:upper_arm",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "upper_arm.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:upper_arm",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 2e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=7584",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:upper_arm",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            30.0,
+            68.5,
+            156.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:upper_arm",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 0.98,
+            "p05": 4.08,
+            "median": 5.98,
+            "frac_below_1p2": 0.0122
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:upper_arm",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-G",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:upper_arm",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 56.4,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:forearm",
+      "title": "forearm",
+      "passed": true,
+      "seconds": 0.26,
+      "results": [
+        {
+          "id": "P-GEO-01:forearm",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:forearm",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "forearm.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:forearm",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 5e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=5380",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:forearm",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            30.0,
+            61.5,
+            144.5
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:forearm",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 2.48,
+            "p05": 2.58,
+            "median": 5.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:forearm",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-G",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:forearm",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 31.2,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "asm:gripper",
+      "title": "Gripper",
+      "passed": true,
+      "seconds": 1.31,
+      "results": [
+        {
+          "id": "A-GRP-01:gripper",
+          "title": "rack/pinion geometry consistent; stroke within servo range",
+          "passed": true,
+          "value": 114.6,
+          "limit": 180.0,
+          "detail": "pitch radius 10.0 mm, opening 41 mm max",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "A-GRP-02:gripper",
+          "title": "grip force \u2265 2\u00d7 payload slip force (\u03bc=0.6)",
+          "passed": true,
+          "value": 21.6,
+          "limit": 1.64,
+          "detail": "MG90S stall 0.216 N\u00b7m / r 10.0 mm",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:gripper_base",
+      "title": "gripper_base",
+      "passed": true,
+      "seconds": 0.19,
+      "results": [
+        {
+          "id": "P-GEO-01:gripper_base",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:gripper_base",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "gripper_base.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:gripper_base",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 1e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=6012",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:gripper_base",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            40.0,
+            74.0,
+            84.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:gripper_base",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 2.032,
+            "p05": 3.98,
+            "median": 4.98,
+            "frac_below_1p2": 0.0
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:gripper_base",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG-G",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:gripper_base",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 20.2,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:gripper_jaw",
+      "title": "gripper_jaw",
+      "passed": true,
+      "seconds": 0.2,
+      "results": [
+        {
+          "id": "P-GEO-01:gripper_jaw",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:gripper_jaw",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "gripper_jaw.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:gripper_jaw",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 2e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=1264",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:gripper_jaw",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            26.5,
+            32.0,
+            44.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:gripper_jaw",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 1.313,
+            "p05": 2.138,
+            "median": 5.98,
+            "frac_below_1p2": 0.0044
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:gripper_jaw",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:gripper_jaw",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 4.5,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:gripper_pinion",
+      "title": "gripper_pinion",
+      "passed": true,
+      "seconds": 0.93,
+      "results": [
+        {
+          "id": "P-GEO-01:gripper_pinion",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:gripper_pinion",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "gripper_pinion.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-03:gripper_pinion",
+          "title": "STL watertight + volume error",
+          "passed": true,
+          "value": 3e-05,
+          "limit": 0.015,
+          "detail": "watertight=True, faces=3736",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-01:gripper_pinion",
+          "title": "fits print bed (some orientation)",
+          "passed": true,
+          "value": [
+            6.0,
+            22.0,
+            22.0
+          ],
+          "limit": [
+            220.0,
+            220.0,
+            250.0
+          ],
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-02:gripper_pinion",
+          "title": "wall thickness (ray-cast, p1 \u2265 0.8 mm, <6 % below 1.2 mm)",
+          "passed": true,
+          "value": {
+            "p01": 1.08,
+            "p05": 1.318,
+            "median": 5.98,
+            "frac_below_1p2": 0.0311
+          },
+          "limit": {
+            "p01": 0.8,
+            "frac_below_1p2": 0.06
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MFG-03:gripper_pinion",
+          "title": "material + print instructions present",
+          "passed": true,
+          "value": "PETG",
+          "limit": null,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-MAS-01:gripper_pinion",
+          "title": "estimated mass in plausible range",
+          "passed": true,
+          "value": 1.8,
+          "limit": "0.5\u2013250 g",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "sub:purchased",
+      "title": "Purchased components",
+      "passed": true,
+      "seconds": 0.26,
+      "results": []
+    },
+    {
+      "id": "part:battery_2s_2200",
+      "title": "battery_2s_2200",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:battery_2s_2200",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:battery_2s_2200",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "battery_2s_2200.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:battery_2s_2200",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 118.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:bearing_61806",
+      "title": "bearing_61806",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:bearing_61806",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:bearing_61806",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "bearing_61806.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:bearing_61806",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 18.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:bearing_625",
+      "title": "bearing_625",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:bearing_625",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:bearing_625",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "bearing_625.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:bearing_625",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 5.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:buck_5v",
+      "title": "buck_5v",
+      "passed": true,
+      "seconds": 0.02,
+      "results": [
+        {
+          "id": "P-GEO-01:buck_5v",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:buck_5v",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "buck_5v.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:buck_5v",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 2.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:esp32_devkitc",
+      "title": "esp32_devkitc",
+      "passed": true,
+      "seconds": 0.02,
+      "results": [
+        {
+          "id": "P-GEO-01:esp32_devkitc",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:esp32_devkitc",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "esp32_devkitc.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:esp32_devkitc",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 10.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:horn_ds3218",
+      "title": "horn_ds3218",
+      "passed": true,
+      "seconds": 0.02,
+      "results": [
+        {
+          "id": "P-GEO-01:horn_ds3218",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:horn_ds3218",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "horn_ds3218.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:horn_ds3218",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 6.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:horn_mg90s",
+      "title": "horn_mg90s",
+      "passed": true,
+      "seconds": 0.02,
+      "results": [
+        {
+          "id": "P-GEO-01:horn_mg90s",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:horn_mg90s",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "horn_mg90s.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:horn_mg90s",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 1.5,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:imu_mpu6050",
+      "title": "imu_mpu6050",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:imu_mpu6050",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:imu_mpu6050",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "imu_mpu6050.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:imu_mpu6050",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 2.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:mosfet_module",
+      "title": "mosfet_module",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:mosfet_module",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:mosfet_module",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "mosfet_module.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:mosfet_module",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 2.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:pca9685",
+      "title": "pca9685",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:pca9685",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:pca9685",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "pca9685.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:pca9685",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 9.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:rocker_switch",
+      "title": "rocker_switch",
+      "passed": true,
+      "seconds": 0.02,
+      "results": [
+        {
+          "id": "P-GEO-01:rocker_switch",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:rocker_switch",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "rocker_switch.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:rocker_switch",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 4.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:rod_3x74",
+      "title": "rod_3x74",
+      "passed": true,
+      "seconds": 0.0,
+      "results": [
+        {
+          "id": "P-GEO-01:rod_3x74",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:rod_3x74",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "rod_3x74.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:rod_3x74",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 4.10614,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:servo_ds3218",
+      "title": "servo_ds3218",
+      "passed": true,
+      "seconds": 0.03,
+      "results": [
+        {
+          "id": "P-GEO-01:servo_ds3218",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:servo_ds3218",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "servo_ds3218.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:servo_ds3218",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 60.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:servo_mg90s",
+      "title": "servo_mg90s",
+      "passed": true,
+      "seconds": 0.03,
+      "results": [
+        {
+          "id": "P-GEO-01:servo_mg90s",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:servo_mg90s",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "servo_mg90s.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:servo_mg90s",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 13.4,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:tof_vl53l0x",
+      "title": "tof_vl53l0x",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:tof_vl53l0x",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:tof_vl53l0x",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "tof_vl53l0x.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:tof_vl53l0x",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 1.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:ubec_6v_10a",
+      "title": "ubec_6v_10a",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:ubec_6v_10a",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:ubec_6v_10a",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "ubec_6v_10a.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:ubec_6v_10a",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 28.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "part:xt60_panel_mount",
+      "title": "xt60_panel_mount",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "P-GEO-01:xt60_panel_mount",
+          "title": "valid single B-rep solid",
+          "passed": true,
+          "value": 1,
+          "limit": 1,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "P-GEO-02:xt60_panel_mount",
+          "title": "STEP round-trip volume error",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "xt60_panel_mount.step",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "V-DAT-01:xt60_panel_mount",
+          "title": "vendor data (mass, description, source)",
+          "passed": true,
+          "value": 6.0,
+          "limit": ">0",
+          "detail": "",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "sub:software",
+      "title": "Kinematics, firmware & models",
+      "passed": true,
+      "seconds": 3.96,
+      "results": [
+        {
+          "id": "S-KIN-01",
+          "title": "leg IK round-trip error (10 000 random poses)",
+          "passed": true,
+          "value": 0.0,
+          "limit": 1e-06,
+          "detail": "",
+          "req": "ik_err_max",
+          "fixer": null
+        },
+        {
+          "id": "S-KIN-02",
+          "title": "analytic leg FK == CAD link-tree FK",
+          "passed": true,
+          "value": 0.0,
+          "limit": 1e-06,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-KIN-03",
+          "title": "arm IK round-trip error (6 000 poses, TCP + nozzle tools)",
+          "passed": true,
+          "value": 0.0,
+          "limit": 1e-06,
+          "detail": "unsolved=0",
+          "req": "ik_err_max",
+          "fixer": null
+        },
+        {
+          "id": "S-KIN-04",
+          "title": "analytic arm FK == CAD link-tree FK (TCP and nozzle)",
+          "passed": true,
+          "value": 0.0,
+          "limit": 1e-06,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-FW-01",
+          "title": "firmware config.h matches params.py (regenerated)",
+          "passed": true,
+          "value": true,
+          "limit": true,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-FW-02",
+          "title": "full sketch compiles on host with -Wall -Wextra -Werror and runs 300 ticks",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-FW-03",
+          "title": "firmware (float32 C++) IK & crawl planner parity with Python",
+          "passed": true,
+          "value": {
+            "max_angle_err_deg": 0.000509,
+            "max_gait_err_mm": 9e-05
+          },
+          "limit": {
+            "max_angle_err_deg": 0.03,
+            "max_gait_err_mm": 0.05
+          },
+          "detail": "760 vectors (float32 vs float64)",
+          "req": "fw_parity_max",
+          "fixer": null
+        },
+        {
+          "id": "S-MOD-01",
+          "title": "MJCF compiles; mass == CAD mass (\u00b10.5 %)",
+          "passed": true,
+          "value": 3193.7,
+          "limit": 3193.7,
+          "detail": "nq=26 nu=17 nbody=22",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-MOD-02",
+          "title": "URDF forward kinematics == link tree (50 random poses)",
+          "passed": true,
+          "value": 0.0,
+          "limit": 0.001,
+          "detail": "17 actuated joints",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "sub:deliverables",
+      "title": "BOM & documentation",
+      "passed": true,
+      "seconds": 0.01,
+      "results": [
+        {
+          "id": "S-BOM-01",
+          "title": "every part instance appears in the BOM with the right quantity",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "[]",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-BOM-02",
+          "title": "every BOM part has its STEP (and STL for printed parts)",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "[]",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-BOM-03",
+          "title": "no orphan CAD files",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "[]",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-BOM-04",
+          "title": "BOM.md / BOM.csv generated",
+          "passed": true,
+          "value": true,
+          "limit": true,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-DOC-01",
+          "title": "all relative links in README/docs resolve",
+          "passed": true,
+          "value": 0,
+          "limit": 0,
+          "detail": "[]",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-DOC-02",
+          "title": "simulation videos present (5)",
+          "passed": true,
+          "value": 5,
+          "limit": 5,
+          "detail": "01_crawl_walk_turn.mp4, 02_watering_mission.mp4, 03_pick_and_place.mp4, 04_ik_showcase.mp4, 05_exploded_assembly.mp4",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    },
+    {
+      "id": "sub:simulation",
+      "title": "Physics simulation (MuJoCo)",
+      "passed": true,
+      "seconds": 97.16,
+      "results": [
+        {
+          "id": "S-SIM-01",
+          "title": "crawl speed with full tank",
+          "passed": true,
+          "value": 0.0272,
+          "limit": 0.02,
+          "detail": "",
+          "req": "walk_speed_min",
+          "fixer": null
+        },
+        {
+          "id": "S-SIM-02",
+          "title": "body tilt during walk + turn",
+          "passed": true,
+          "value": 2.29,
+          "limit": 12.0,
+          "detail": "",
+          "req": "tilt_max_deg",
+          "fixer": "crawl_slower"
+        },
+        {
+          "id": "S-SIM-03",
+          "title": "servo torque, 50 ms filtered peak (fraction of stall)",
+          "passed": true,
+          "value": 0.826,
+          "limit": 0.9,
+          "detail": "joint FR_hip_pitch; raw peak 1.00",
+          "req": "sim_peak_torque_frac",
+          "fixer": "crawl_slower"
+        },
+        {
+          "id": "S-SIM-04",
+          "title": "servo torque, 99th percentile (fraction of stall)",
+          "passed": true,
+          "value": 0.489,
+          "limit": 0.75,
+          "detail": "",
+          "req": "sim_p99_torque_frac",
+          "fixer": "crawl_slower"
+        },
+        {
+          "id": "S-SIM-05",
+          "title": "turn in place achieves \u2265 70 % of commanded yaw, no IK clamping",
+          "passed": true,
+          "value": 35.7,
+          "limit": 27.7,
+          "detail": "IK clamps 0",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-SIM-06",
+          "title": "watering: fraction of emitted water landing in target pots",
+          "passed": true,
+          "value": 1.0,
+          "limit": 0.85,
+          "detail": "per plant [10.04, 10.04, 10.0] ml",
+          "req": "water_delivery_min",
+          "fixer": null
+        },
+        {
+          "id": "S-SIM-07",
+          "title": "watering: mass balance exact, every plant dosed \u2265 90 %, no aim failures",
+          "passed": true,
+          "value": -0.0,
+          "limit": 0.01,
+          "detail": "tank left 369.9 ml",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-SIM-08",
+          "title": "pick & place: lift \u2265 30 mm, placed \u2264 25 mm, no unreachable waypoints, no joint clamping",
+          "passed": true,
+          "value": {
+            "lift_mm": 54.5,
+            "place_err_mm": 1.2,
+            "unreachable": 0,
+            "ik_clamps": 0
+          },
+          "limit": {
+            "lift_mm": 30.0,
+            "place_err_mm": 25.0
+          },
+          "detail": "",
+          "req": "grasp_lift_min",
+          "fixer": null
+        },
+        {
+          "id": "S-SIM-09",
+          "title": "pick & place: servo 50 ms peak \u2264 limit, tilt \u2264 limit",
+          "passed": true,
+          "value": {
+            "peak": 0.805,
+            "tilt": 10.21
+          },
+          "limit": {
+            "peak": 0.9,
+            "tilt": 12.0
+          },
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-SIM-10",
+          "title": "IK showcase: arm Cartesian tracking error (analytic)",
+          "passed": true,
+          "value": 0.0,
+          "limit": 1e-05,
+          "detail": "",
+          "req": "",
+          "fixer": null
+        },
+        {
+          "id": "S-SIM-11",
+          "title": "gait robustness: cycle time \u00b110 % (walk & turn) upright, joint-limit contact \u2264 50 ms",
+          "passed": true,
+          "value": 5.2,
+          "limit": 12.0,
+          "detail": "walk T=2.16s tilt 5.2\u00b0 limit-contact 0 ms; walk T=2.64s tilt 1.3\u00b0 limit-contact 0 ms; turn T=2.7s tilt 2.5\u00b0 limit-contact 0 ms; turn T=3.3s tilt 3.7\u00b0 limit-contact 30 ms",
+          "req": "",
+          "fixer": null
+        }
+      ]
+    }
+  ]
+}

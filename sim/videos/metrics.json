@@ -1,0 +1,83 @@
+{
+  "walk": {
+    "peak_torque_frac_50ms": 0.8255927025097828,
+    "peak_joint_50ms": "FR_hip_pitch",
+    "p99_torque_frac": 0.48913598618985443,
+    "peak_torque_frac": 1.0,
+    "peak_joint": "RR_knee",
+    "rms_torque_frac": 0.1573132039233385,
+    "max_tilt_deg": 2.292319613325698,
+    "min_base_z_mm": 222.66747719688013,
+    "mean_mech_power_W": 1.8916933126779534,
+    "mean_servo_current_A": 4.532738158735631,
+    "peak_servo_current_A": 9.63989189107047,
+    "speed_m_s": 0.027244697155567512,
+    "heading_drift_deg": 0.4296646137528582,
+    "turn_deg": 35.668975425523165,
+    "ik_clamps": 0,
+    "render_wall_s": 417.8
+  },
+  "pick": {
+    "peak_torque_frac_50ms": 0.8047236761145782,
+    "peak_joint_50ms": "RL_hip_pitch",
+    "p99_torque_frac": 0.5049577750663786,
+    "peak_torque_frac": 0.847795586882562,
+    "peak_joint": "RL_hip_pitch",
+    "rms_torque_frac": 0.18959526918825637,
+    "max_tilt_deg": 10.20735708891176,
+    "min_base_z_mm": 146.71578239797634,
+    "mean_mech_power_W": 0.4988293966096096,
+    "lift_mm": 54.48387229575988,
+    "place_err_mm": 1.2313947478979212,
+    "stone_final_mm": [
+      -12.9,
+      172.9,
+      18.4
+    ],
+    "in_tray": true,
+    "unreachable_waypoints": 0,
+    "ik_clamps": 0,
+    "render_wall_s": 433.5
+  },
+  "ik": {
+    "peak_torque_frac_50ms": 0.6451637533264388,
+    "peak_joint_50ms": "RR_hip_pitch",
+    "p99_torque_frac": 0.2844725461771072,
+    "peak_torque_frac": 0.9875583309412133,
+    "peak_joint": "RR_hip_pitch",
+    "rms_torque_frac": 0.13289845276578868,
+    "max_tilt_deg": 10.128175578164008,
+    "min_base_z_mm": 198.5509169992958,
+    "mean_mech_power_W": 0.4251053801373306,
+    "arm_ik_max_err_mm": 1.6230351877900013e-13,
+    "render_wall_s": 283.5
+  },
+  "watering": {
+    "peak_torque_frac_50ms": 0.8632687979243946,
+    "peak_joint_50ms": "FR_hip_pitch",
+    "p99_torque_frac": 0.40963440297197695,
+    "peak_torque_frac": 1.0,
+    "peak_joint": "RR_knee",
+    "rms_torque_frac": 0.15569906431594552,
+    "max_tilt_deg": 4.067742393858323,
+    "min_base_z_mm": 193.21526204737992,
+    "mean_mech_power_W": 0.9799122651059369,
+    "emitted_ml": 30.074074074074343,
+    "delivered_ml": 30.07407407407403,
+    "delivery_fraction": 0.9999999999999896,
+    "per_plant_ml": [
+      10.037037037037022,
+      10.037037037037022,
+      9.999999999999986
+    ],
+    "tank_left_ml": 369.92592592594815,
+    "water_balance_err_ml": -2.249223030048597e-11,
+    "aim_failures": [],
+    "ik_clamps": 0,
+    "render_wall_s": 1304.6
+  },
+  "exploded": {
+    "frames": 300,
+    "render_wall_s": 124.6
+  }
+}

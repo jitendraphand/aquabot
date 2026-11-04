@@ -1,0 +1,78 @@
+id,category,subsystem,item,description,qty,material,unit_mass_g,unit_price_usd,source,files,note,ext_price_usd
+P01,Printed,arm,arm_bearing_plate,Bearing plate: carries the 61806 thin-section yaw bearing on a Ø30 boss,1,"PETG (green), 4 walls, 30 % gyroid",7.6,0.17,3D print,cad/stl/arm_bearing_plate.stl; cad/step/arm_bearing_plate.step,"Print flat, boss up, 5 walls (bearing seat), 40 % infill",0.17
+P02,Printed,arm,arm_pedestal,Arm pedestal: houses the yaw servo (flange on internal shelf); clamped by 4 M3x50 through-bolts,1,"PETG (green), 4 walls, 30 % gyroid",26.0,0.57,3D print,cad/stl/arm_pedestal.stl; cad/step/arm_pedestal.step,"Print upright, 4 walls, 30 % gyroid, no supports (shelf bridges 21 mm)",0.57
+P03,Printed,arm,arm_turntable,Turntable on yaw horn + 61806 bearing; shoulder servo plate + shoulder idler,1,"PETG (green), 4 walls, 30 % gyroid",24.1,0.53,3D print,cad/stl/arm_turntable.stl; cad/step/arm_turntable.step,"Print plate-down, 5 walls, 40 % gyroid, supports under idler boss only",0.53
+P04,Printed,body,bulkhead_front,Front bulkhead: carries two J1 hip-abduction servos + ToF sensor window,1,"PETG, 4 walls, 30 % gyroid",23.8,0.52,3D print,cad/stl/bulkhead_front.stl; cad/step/bulkhead_front.step,"Print flat, 5 walls around insert holes, 40 % gyroid",0.52
+P05,Printed,body,bulkhead_rear,Rear bulkhead: carries two J1 hip-abduction servos + power switch & XT60 charge port,1,"PETG, 4 walls, 30 % gyroid",23.1,0.51,3D print,cad/stl/bulkhead_rear.stl; cad/step/bulkhead_rear.step,"Print flat, 5 walls around insert holes, 40 % gyroid",0.51
+P06,Printed,body,chassis_tub,"Main body tub: floor + side walls, insert bosses for bulkheads and deck",1,"PETG, 4 walls, 30 % gyroid",120.8,2.66,3D print,cad/stl/chassis_tub.stl; cad/step/chassis_tub.step,"Print upright (open top up), 4 walls, 30 % gyroid, no supports",2.66
+P07,Printed,electronics,electronics_cover,"Splash cover over ESP32 + PCA9685 (vent slots, USB access)",1,"PETG (green), 4 walls, 30 % gyroid",29.2,0.64,3D print,cad/stl/electronics_cover.stl; cad/step/electronics_cover.step,"Print upside-down (top on bed), 3 walls",0.64
+P08,Printed,electronics,electronics_tray,"Electronics tray: PCA9685 standoffs, ESP32 cradle, cover posts",1,"PETG, 4 walls, 30 % gyroid",18.5,0.41,3D print,cad/stl/electronics_tray.stl; cad/step/electronics_tray.step,"Print flat, 3 walls, 20 % infill",0.41
+P09,Printed,leg,femur_L,"Femur (left): fork on hip-pitch servo, houses knee servo, carries knee idler",2,"PETG, 4 walls, 30 % gyroid",48.2,1.06,3D print,cad/stl/femur_L.stl; cad/step/femur_L.step,"Print lying on the outer tine face, 4 walls, 35 % gyroid, tree supports under idler",2.12
+P10,Printed,leg,femur_R,"Femur (right): fork on hip-pitch servo, houses knee servo, carries knee idler",2,"PETG, 4 walls, 30 % gyroid",48.2,1.06,3D print,cad/stl/femur_R.stl; cad/step/femur_R.step,"Print lying on the outer tine face, 4 walls, 35 % gyroid, tree supports under idler",2.12
+P11,Printed,water,fill_cap,Fill cap: push-fit plug with 16x2 O-ring and Ø1.2 air vent,1,"PETG (blue), 100 % walls for water tightness",9.7,0.21,3D print,cad/stl/fill_cap.stl; cad/step/fill_cap.step,"Print head-down, 100 % infill",0.21
+P12,Printed,leg,foot_pad,"Ø26 TPU foot (sphere contact, slips over the tibia spigot)",4,"TPU 95A, 3 walls, 25 % infill",4.1,0.09,3D print,cad/stl/foot_pad.stl; cad/step/foot_pad.step,"TPU 95A, print bore-up, 3 walls, 25 % infill, slow (25 mm/s)",0.36
+P13,Printed,arm,forearm,"Forearm: fork on elbow servo, houses the MG90S wrist servo",1,"PETG (green), 4 walls, 30 % gyroid",31.2,0.69,3D print,cad/stl/forearm.stl; cad/step/forearm.step,"Print lying on the outer tine face, 4 walls, 35 % gyroid",0.69
+P14,Printed,arm,gripper_base,"Gripper base: on wrist horn, carries gripper servo, guide rods, nozzle clip",1,"PETG (green), 4 walls, 30 % gyroid",20.2,0.44,3D print,cad/stl/gripper_base.stl; cad/step/gripper_base.step,"Print with the mount plate on the bed, 4 walls, 40 % infill, supports for end plates",0.44
+P15,Printed,arm,gripper_jaw,"Gripper jaw with integral rack (two identical jaws, mirrored by rotation)",2,"PETG, 4 walls, 30 % gyroid",4.5,0.1,3D print,cad/stl/gripper_jaw.stl; cad/step/gripper_jaw.step,"Print on the carriage side, 0.12 mm layers, 5 walls; add 1 mm TPU pad tape",0.2
+P16,Printed,arm,gripper_pinion,"Pinion m1 z20, bolted to MG90S horn",1,"PETG, 4 walls, 30 % gyroid",1.8,0.04,3D print,cad/stl/gripper_pinion.stl; cad/step/gripper_pinion.step,"Print flat, 0.12 mm layers, 100 % infill",0.04
+P17,Printed,leg,shoulder_bracket_L,"Shoulder bracket (FL / RR): on J1 horn, holds hip-pitch servo + femur idler",2,"PETG (green), 4 walls, 30 % gyroid",26.8,0.59,3D print,cad/stl/shoulder_bracket_L.stl; cad/step/shoulder_bracket_L.step,"Print standing on the back plate, 4 walls, 40 % gyroid",1.18
+P18,Printed,leg,shoulder_bracket_R,"Shoulder bracket (FL / RR): on J1 horn, holds hip-pitch servo + femur idler",2,"PETG (green), 4 walls, 30 % gyroid",26.8,0.59,3D print,cad/stl/shoulder_bracket_R.stl; cad/step/shoulder_bracket_R.step,"Print standing on the back plate, 4 walls, 40 % gyroid",1.18
+P19,Printed,water,tank_body,400 ml water reservoir with anti-slosh baffle (sits on tub floor),1,"PETG (blue), 100 % walls for water tightness",94.7,2.08,3D print,cad/stl/tank_body.stl; cad/step/tank_body.step,"PETG, 100 % solid walls (or 6 walls), 0.2 mm layers, then seal inside with food-safe epoxy; leak-test before install",2.08
+P20,Printed,water,tank_lid,Tank lid with fill neck (Ø20) and dip-tube barb for the peristaltic pump,1,"PETG (blue), 100 % walls for water tightness",42.3,0.93,3D print,cad/stl/tank_lid.stl; cad/step/tank_lid.step,"Print flat, neck up, 6 walls; gasket: 1 mm silicone sheet",0.93
+P21,Printed,leg,tibia_L,"Tibia (left): fork on knee servo, tapered shin, foot spigot",2,"PETG, 4 walls, 30 % gyroid",24.4,0.54,3D print,cad/stl/tibia_L.stl; cad/step/tibia_L.step,"Print lying on the outer tine face, 4 walls, 35 % gyroid",1.08
+P22,Printed,leg,tibia_R,"Tibia (right): fork on knee servo, tapered shin, foot spigot",2,"PETG, 4 walls, 30 % gyroid",24.4,0.54,3D print,cad/stl/tibia_R.stl; cad/step/tibia_R.step,"Print lying on the outer tine face, 4 walls, 35 % gyroid",1.08
+P23,Printed,body,top_deck,"Top deck: closes the tub, carries arm pedestal, electronics tray, fill neck",1,"PETG, 4 walls, 30 % gyroid",47.4,1.04,3D print,cad/stl/top_deck.stl; cad/step/top_deck.step,"Print flat, 4 walls, 30 % gyroid",1.04
+P24,Printed,arm,upper_arm,"Upper arm: fork on shoulder servo, houses elbow servo + elbow idler",1,"PETG (green), 4 walls, 30 % gyroid",56.4,1.24,3D print,cad/stl/upper_arm.stl; cad/step/upper_arm.step,"Print lying on the outer tine face, 4 walls, 35 % gyroid",1.24
+V01,Purchased,power,battery_2s_2200,2S 7.4 V 2200 mAh LiPo (XT60),1,-,118.0,16.0,hobby shop,cad/step/battery_2s_2200.step (envelope),,16.0
+V02,Purchased,mechanical,bearing_61806,61806-2RS ball bearing 30x42x7,1,-,18.0,4.0,AliExpress / bearing shop,cad/step/bearing_61806.step (envelope),,4.0
+V03,Purchased,mechanical,bearing_625,625-2RS ball bearing 5x16x5,10,-,5.0,0.6,AliExpress / bearing shop,cad/step/bearing_625.step (envelope),,6.0
+V04,Purchased,electronics,buck_5v,Mini-360 buck 5 V 2 A,1,-,2.0,1.0,AliExpress / Amazon,cad/step/buck_5v.step (envelope),,1.0
+V05,Purchased,electronics,esp32_devkitc,ESP32-DevKitC V4 (WROOM-32E),1,-,10.0,8.0,AliExpress / Amazon,cad/step/esp32_devkitc.step (envelope),,8.0
+V06,Purchased,actuation,horn_ds3218,25T aluminium disc horn Ø25,15,-,6.0,1.5,AliExpress (25T alu horn),cad/step/horn_ds3218.step (envelope),,22.5
+V07,Purchased,actuation,horn_mg90s,MG90S round horn Ø20,2,-,1.5,0.0,included w/ servo,cad/step/horn_mg90s.step (envelope),,0.0
+V08,Purchased,electronics,imu_mpu6050,MPU-6050 6-axis IMU (GY-521),1,-,2.0,2.0,AliExpress / Amazon,cad/step/imu_mpu6050.step (envelope),,2.0
+V09,Purchased,electronics,mosfet_module,AO3400 logic-level MOSFET module (pump),1,-,2.0,1.5,AliExpress / Amazon,cad/step/mosfet_module.step (envelope),,1.5
+V10,Purchased,water,nozzle_brass,"Brass dispensing tip, Ø1.5 mm orifice, barbed for 2x4 mm tube",1,-,2.0,0.8,AliExpress (blunt dispensing tip),cad/step/nozzle_brass.step (envelope),,0.8
+V11,Purchased,electronics,pca9685,PCA9685 16-ch PWM driver,1,-,9.0,4.0,AliExpress / Amazon,cad/step/pca9685.step (envelope),,4.0
+V12,Purchased,water,pump_peristaltic,"6 V DC mini peristaltic pump, 2x3 mm tube head, 100 ml/min",1,-,62.0,9.0,AliExpress (Kamoer-style NKP),cad/step/pump_peristaltic.step (envelope),,9.0
+V13,Purchased,power,rocker_switch,KCD1 rocker switch 10 A (13x19 mm cut-out),1,-,4.0,0.5,AliExpress,cad/step/rocker_switch.step (envelope),,0.5
+V14,Purchased,arm,rod_3x74,Ø3 x 74 mm ground steel rod (cut from 3 mm silver steel),2,-,4.1,0.3,hardware store,cad/step/rod_3x74.step (envelope),,0.6
+V15,Purchased,actuation,servo_ds3218,"DS3218MG 270° servo, 1.96 N·m stall @6 V",15,-,60.0,14.0,AliExpress / Amazon (DSSERVO),cad/step/servo_ds3218.step (envelope),,210.0
+V16,Purchased,actuation,servo_mg90s,"MG90S servo, 0.22 N·m stall @6 V",2,-,13.4,4.0,AliExpress / Amazon (DSSERVO),cad/step/servo_mg90s.step (envelope),,8.0
+V17,Purchased,electronics,tof_vl53l0x,VL53L0X ToF range sensor,1,-,1.0,4.0,AliExpress / Amazon,cad/step/tof_vl53l0x.step (envelope),,4.0
+V18,Purchased,power,ubec_6v_10a,6.0 V 10 A UBEC,2,-,28.0,9.0,hobby shop,cad/step/ubec_6v_10a.step (envelope),,18.0
+V19,Purchased,power,xt60_panel_mount,XT60 panel-mount female (charge port),1,-,6.0,1.5,hobby shop,cad/step/xt60_panel_mount.step (envelope),,1.5
+F01,Fastener,hardware,M2x6 self-tapping,M2x6 self-tapping,4,steel A2 / brass insert,0.0,0.03,hardware kit,,count derived from CAD hole interfaces,0.12
+F02,Fastener,hardware,M2x8 self-tapping,M2x8 self-tapping,8,steel A2 / brass insert,0.0,0.03,hardware kit,,count derived from CAD hole interfaces,0.24
+F03,Fastener,hardware,M3 heat-set insert (M3x4),M3 heat-set insert (M3x4),8,steel A2 / brass insert,0.0,0.04,hardware kit,,count derived from CAD hole interfaces,0.32
+F04,Fastener,hardware,M3 heat-set insert (M3x5.7),M3 heat-set insert (M3x5.7),100,steel A2 / brass insert,0.0,0.04,hardware kit,,count derived from CAD hole interfaces,4.0
+F05,Fastener,hardware,M3x10 SHCS,M3x10 SHCS,110,steel A2 / brass insert,0.0,0.05,hardware kit,,count derived from CAD hole interfaces,5.5
+F06,Fastener,hardware,M3x10 SHCS + Ø7 nylon washer,M3x10 SHCS + Ø7 nylon washer,4,steel A2 / brass insert,0.0,0.07,hardware kit,,count derived from CAD hole interfaces,0.28
+F07,Fastener,hardware,M3x10 countersunk (horn holes drilled Ø3.2),M3x10 countersunk (horn holes drilled Ø3.2),16,steel A2 / brass insert,0.0,0.05,hardware kit,,count derived from CAD hole interfaces,0.8
+F08,Fastener,hardware,M3x12 SHCS,M3x12 SHCS,10,steel A2 / brass insert,0.0,0.05,hardware kit,,count derived from CAD hole interfaces,0.5
+F09,Fastener,hardware,M3x16 SHCS + M3 nyloc,M3x16 SHCS + M3 nyloc,4,steel A2 / brass insert,0.0,0.08,hardware kit,,count derived from CAD hole interfaces,0.32
+F10,Fastener,hardware,M3x50 SHCS (through pedestal post into deck insert),M3x50 SHCS (through pedestal post into deck insert),4,steel A2 / brass insert,0.0,0.12,hardware kit,,count derived from CAD hole interfaces,0.48
+F11,Fastener,hardware,M3x6 horn centre screw (supplied with horn),M3x6 horn centre screw (supplied with horn),15,steel A2 / brass insert,0.0,0.0,hardware kit,,count derived from CAD hole interfaces,0.0
+F12,Fastener,hardware,M3x8 SHCS,M3x8 SHCS,4,steel A2 / brass insert,0.0,0.05,hardware kit,,count derived from CAD hole interfaces,0.2
+F13,Fastener,hardware,M3x8 button head,M3x8 button head,4,steel A2 / brass insert,0.0,0.05,hardware kit,,count derived from CAD hole interfaces,0.2
+F14,Fastener,hardware,M5 nyloc nut + M5 washer,M5 nyloc nut + M5 washer,10,steel A2 / brass insert,0.0,0.06,hardware kit,,count derived from CAD hole interfaces,0.6
+F15,Fastener,hardware,M5x20 low-head SHCS (DIN 7984),M5x20 low-head SHCS (DIN 7984),10,steel A2 / brass insert,0.0,0.15,hardware kit,,count derived from CAD hole interfaces,1.5
+X01,Electronics,electronics,Servo extension lead 25 cm (JR/Futaba),Servo extension lead 25 cm (JR/Futaba),8,-,5.0,0.35,generic,,J2/J3/arm servos to PCA9685,2.8
+X02,Electronics,electronics,Dupont jumper set + 2.54 mm headers,Dupont jumper set + 2.54 mm headers,1,-,10.0,3.0,generic,,"I2C, PWM, sensor wiring",3.0
+X03,Electronics,electronics,"Silicone wire 16 AWG, red+black, 1 m each","Silicone wire 16 AWG, red+black, 1 m each",1,-,20.0,3.0,generic,,battery -> switch -> UBECs,3.0
+X04,Electronics,electronics,Blade fuse holder + 15 A fuse,Blade fuse holder + 15 A fuse,1,-,6.0,1.5,generic,,battery positive lead,1.5
+X05,Electronics,electronics,Electrolytic capacitor 1000 µF / 16 V,Electrolytic capacitor 1000 µF / 16 V,2,-,2.0,0.3,generic,,one per servo rail at PCA9685 V+,0.6
+X06,Electronics,electronics,Voltage divider 100k/47k + 100 nF,Voltage divider 100k/47k + 100 nF,1,-,0.5,0.1,generic,,battery voltage -> ESP32 ADC (GPIO35),0.1
+X07,Water,water,"Silicone tube 2 x 4 mm, 1 m","Silicone tube 2 x 4 mm, 1 m",1,-,12.0,1.5,generic,,"dip tube, pump, arm run to nozzle",1.5
+X08,Water,water,O-ring 16 x 2 mm NBR,O-ring 16 x 2 mm NBR,2,-,0.3,0.1,generic,,fill cap (one spare),0.2
+X09,Water,water,"Silicone sheet 1 mm, 130 x 90 mm","Silicone sheet 1 mm, 130 x 90 mm",1,-,12.0,1.0,generic,,tank lid gasket,1.0
+X10,Water,water,"Food-safe epoxy coating (2-part, 10 ml)","Food-safe epoxy coating (2-part, 10 ml)",1,-,0.0,4.0,generic,,seal inside of tank,4.0
+X11,Water,water,"Tube clips, printed or 4 mm cable clips","Tube clips, printed or 4 mm cable clips",6,-,0.5,0.05,generic,,route tube along arm,0.3
+X12,Hardware,hardware,"VHB double-sided foam tape 19 mm, 0.5 m","VHB double-sided foam tape 19 mm, 0.5 m",1,-,3.0,2.0,generic,,"pump, UBECs, buck, IMU, ESP32",2.0
+X13,Hardware,hardware,Hook-and-loop battery strap 200 mm,Hook-and-loop battery strap 200 mm,1,-,4.0,0.8,generic,,battery on tank lid,0.8
+X14,Hardware,hardware,M2.5 x 6 nylon standoff + screws,M2.5 x 6 nylon standoff + screws,4,-,0.4,0.1,generic,,PCA9685 on tray,0.4
+X15,Hardware,hardware,M2 x 6 self-tapping screw,M2 x 6 self-tapping screw,2,-,0.2,0.03,generic,,ToF board on front bulkhead,0.06
+X16,Hardware,hardware,M2.5 x 8 SHCS + nut,M2.5 x 8 SHCS + nut,2,-,0.5,0.05,generic,,XT60 panel mount,0.1
+X17,Hardware,hardware,Zip ties 100 mm,Zip ties 100 mm,20,-,0.2,0.02,generic,,cable management,0.4
+X18,Consumable,consumable,PETG filament (≈ 0.9 kg incl. supports & tests),PETG filament (≈ 0.9 kg incl. supports & tests),1,-,0.0,18.0,generic,,1 kg spool,18.0
+X19,Consumable,consumable,TPU 95A filament (≈ 40 g),TPU 95A filament (≈ 40 g),1,-,0.0,3.0,generic,,feet,3.0

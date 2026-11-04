@@ -1,0 +1,46 @@
+name: QA
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Run the full QA including MuJoCo simulations"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "17 3 * * 1"   # weekly full run
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+      MUJOCO_GL: egl
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: System packages
+        run: sudo apt-get update && sudo apt-get install -y libegl1 libgl1 libglu1-mesa
+      - name: Python dependencies
+        run: pip install -r requirements.txt
+      - name: Unit tests
+        run: python -m pytest -q tests
+      - name: Firmware host build
+        run: mkdir -p build && make firmware-test
+      - name: QA (fast)
+        if: ${{ github.event_name != 'schedule' && !inputs.full }}
+        run: python -m aquabot.qa.run --fast
+      - name: QA (full, with simulation)
+        if: ${{ github.event_name == 'schedule' || inputs.full }}
+        run: python -m aquabot.qa.run --fix
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qa-report
+          path: qa/

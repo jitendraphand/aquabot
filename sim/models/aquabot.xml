@@ -1,0 +1,341 @@
+<mujoco model="aquabot">
+  <compiler angle="radian" meshdir="meshes" autolimits="true" inertiafromgeom="false"/>
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" impratio="4">
+    <flag multiccd="enable"/>
+  </option>
+  <size memory="64M"/>
+  <visual>
+    <global offwidth="1920" offheight="1080" fovy="40"/>
+    <quality shadowsize="4096" offsamples="8"/>
+    <headlight ambient="0.32 0.32 0.32" diffuse="0.5 0.5 0.5" specular="0.05 0.05 0.05"/>
+    <map znear="0.005" zfar="30" haze="0.15"/>
+    <rgba haze="0.82 0.88 0.95 1"/>
+  </visual>
+
+  <default>
+    <default class="aquabot">
+      <geom contype="0" conaffinity="0"/>
+      <default class="vis"><geom type="mesh" group="1" contype="0" conaffinity="0" density="0"/></default>
+      <default class="col"><geom group="3" contype="2" conaffinity="1" rgba="0.9 0.2 0.2 0.3" density="0"
+                                  friction="0.6 0.01 0.001"/></default>
+      <default class="foot"><geom group="3" contype="2" conaffinity="1" rgba="0.1 0.1 0.1 0.4" density="0"
+                                   friction="1.1 0.02 0.002" condim="3" solref="0.006 1" solimp="0.92 0.97 0.001"/></default>
+      <default class="finger"><geom group="3" contype="2" conaffinity="1" rgba="0.1 0.1 0.1 0.5" density="0"
+                                     friction="1.6 0.02 0.002" condim="4" solref="0.004 1"/></default>
+      <default class="ds"><joint damping="0.04" armature="0.0045" frictionloss="0.03"/>
+        <motor ctrlrange="-1.96 1.96" ctrllimited="true"/></default>
+      <default class="mg"><joint damping="0.008" armature="0.0006" frictionloss="0.004"/>
+        <motor ctrlrange="-0.216 0.216" ctrllimited="true"/></default>
+      <default class="slide"><joint damping="2.0" armature="0.02"/>
+        <motor ctrlrange="-18 18" ctrllimited="true"/></default>
+    </default>
+  </default>
+  <asset>
+    <texture name="sky" type="skybox" builtin="gradient" rgb1="0.75 0.86 0.98" rgb2="0.98 0.99 1.0" width="128" height="128"/>
+    <texture name="ground" type="2d" builtin="checker" rgb1="0.52 0.42 0.30" rgb2="0.48 0.38 0.27" width="512" height="512" mark="random" markrgb="0.42 0.55 0.28" random="0.04"/>
+    <material name="ground" texture="ground" texrepeat="30 30" reflectance="0.0"/>
+    <material name="terracotta" rgba="0.72 0.36 0.22 1"/>
+    <material name="soil" rgba="0.30 0.21 0.13 1"/>
+    <material name="soilwet" rgba="0.17 0.11 0.07 1"/>
+    <material name="leaf" rgba="0.22 0.62 0.20 1"/>
+    <mesh name="arm_bearing_plate" file="arm_bearing_plate.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="arm_pedestal" file="arm_pedestal.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="arm_turntable" file="arm_turntable.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="battery_2s_2200" file="battery_2s_2200.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="bearing_61806" file="bearing_61806.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="bearing_625" file="bearing_625.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="buck_5v" file="buck_5v.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="bulkhead_front" file="bulkhead_front.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="bulkhead_rear" file="bulkhead_rear.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="chassis_tub" file="chassis_tub.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="electronics_cover" file="electronics_cover.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="electronics_tray" file="electronics_tray.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="esp32_devkitc" file="esp32_devkitc.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="femur_L" file="femur_L.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="femur_R" file="femur_R.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="fill_cap" file="fill_cap.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="foot_pad" file="foot_pad.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="forearm" file="forearm.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="gripper_base" file="gripper_base.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="gripper_jaw" file="gripper_jaw.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="gripper_pinion" file="gripper_pinion.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="horn_ds3218" file="horn_ds3218.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="horn_mg90s" file="horn_mg90s.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="imu_mpu6050" file="imu_mpu6050.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="mosfet_module" file="mosfet_module.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="nozzle_brass" file="nozzle_brass.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="pca9685" file="pca9685.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="pump_peristaltic" file="pump_peristaltic.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="rocker_switch" file="rocker_switch.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="rod_3x74" file="rod_3x74.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="servo_ds3218" file="servo_ds3218.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="servo_mg90s" file="servo_mg90s.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="shoulder_bracket_L" file="shoulder_bracket_L.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="shoulder_bracket_R" file="shoulder_bracket_R.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="tank_body" file="tank_body.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="tank_lid" file="tank_lid.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="tibia_L" file="tibia_L.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="tibia_R" file="tibia_R.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="tof_vl53l0x" file="tof_vl53l0x.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="top_deck" file="top_deck.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="ubec_6v_10a" file="ubec_6v_10a.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="upper_arm" file="upper_arm.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="xt60_panel_mount" file="xt60_panel_mount.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+  <worldbody>
+    <light name="sun" pos="1.5 -2 3.5" dir="-0.35 0.5 -1" diffuse="0.75 0.75 0.72" castshadow="true"/>
+    <light name="fill" pos="-2 2 2" dir="0.5 -0.5 -0.6" diffuse="0.25 0.25 0.3" castshadow="false"/>
+    <geom name="floor" type="plane" size="20 20 0.1" material="ground" contype="1" conaffinity="2" friction="1.0 0.02 0.002"/>
+    <camera name="side" pos="0.3 -1.25 0.42" xyaxes="1 0 0 0 0.32 0.95" fovy="40"/>
+    <body name="base" pos="0.000000 0.000000 0.225000" quat="1.000000 0.000000 0.000000 0.000000" childclass="aquabot">
+      <freejoint name="root"/>
+      <inertial pos="0.005717 -0.000568 0.009157" mass="1.456936" fullinertia="2.5915e-03 5.8629e-03 5.4276e-03 4.6573e-05 -3.3150e-04 4.2190e-05"/>
+      <geom class="vis" mesh="chassis_tub" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+      <geom class="vis" mesh="bulkhead_front" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+      <geom class="vis" mesh="bulkhead_rear" pos="0.000000 0.000000 0.000000" quat="0.0000000 0.0000000 0.0000000 1.0000000" rgba="0.930 0.930 0.900 1.000"/>
+      <geom class="vis" mesh="top_deck" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+      <geom class="vis" mesh="tank_body" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.120 0.450 0.800 1.000"/>
+      <geom class="vis" mesh="tank_lid" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.120 0.450 0.800 1.000"/>
+      <geom class="vis" mesh="fill_cap" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.120 0.450 0.800 1.000"/>
+      <geom class="vis" mesh="electronics_tray" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+      <geom class="vis" mesh="electronics_cover" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.200 0.620 0.360 1.000"/>
+      <geom class="vis" mesh="arm_pedestal" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.200 0.620 0.360 1.000"/>
+      <geom class="vis" mesh="arm_bearing_plate" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.200 0.620 0.360 1.000"/>
+      <geom class="vis" mesh="servo_ds3218" pos="0.108500 0.028000 0.000000" quat="0.7071068 0.0000000 0.7071068 0.0000000" rgba="0.080 0.080 0.090 1.000"/>
+      <geom class="vis" mesh="servo_ds3218" pos="0.108500 -0.028000 0.000000" quat="0.7071068 0.0000000 0.7071068 0.0000000" rgba="0.080 0.080 0.090 1.000"/>
+      <geom class="vis" mesh="servo_ds3218" pos="-0.108500 0.028000 0.000000" quat="0.0000000 -0.7071068 0.0000000 0.7071068" rgba="0.080 0.080 0.090 1.000"/>
+      <geom class="vis" mesh="servo_ds3218" pos="-0.108500 -0.028000 0.000000" quat="0.0000000 -0.7071068 0.0000000 0.7071068" rgba="0.080 0.080 0.090 1.000"/>
+      <geom class="vis" mesh="servo_ds3218" pos="0.055000 0.000000 0.082000" quat="0.7071068 0.0000000 0.0000000 -0.7071068" rgba="0.080 0.080 0.090 1.000"/>
+      <geom class="vis" mesh="bearing_61806" pos="0.055000 0.000000 0.087000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+      <geom class="vis" mesh="battery_2s_2200" pos="-0.018000 0.000000 0.004500" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.850 0.650 0.100 1.000"/>
+      <geom class="vis" mesh="pump_peristaltic" pos="-0.064000 -0.014000 0.002900" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.850 0.850 0.880 1.000"/>
+      <geom class="vis" mesh="ubec_6v_10a" pos="0.020000 0.019000 0.002900" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.150 0.150 0.150 1.000"/>
+      <geom class="vis" mesh="ubec_6v_10a" pos="0.020000 -0.042500 0.002900" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.150 0.150 0.150 1.000"/>
+      <geom class="vis" mesh="buck_5v" pos="0.002000 0.022000 0.002900" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.050 0.200 0.550 1.000"/>
+      <geom class="vis" mesh="imu_mpu6050" pos="-0.026000 0.022000 0.002900" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.050 0.200 0.550 1.000"/>
+      <geom class="vis" mesh="tof_vl53l0x" pos="0.086000 -0.012500 -0.019000" quat="0.5000000 0.5000000 0.5000000 0.5000000" rgba="0.050 0.200 0.550 1.000"/>
+      <geom class="vis" mesh="rocker_switch" pos="-0.095000 0.000000 -0.012500" quat="0.0000000 0.0000000 0.0000000 1.0000000" rgba="0.080 0.080 0.090 1.000"/>
+      <geom class="vis" mesh="xt60_panel_mount" pos="-0.095000 0.000000 0.024000" quat="0.0000000 0.0000000 0.0000000 1.0000000" rgba="0.900 0.800 0.100 1.000"/>
+      <geom class="vis" mesh="pca9685" pos="-0.029500 -0.036000 0.046000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.050 0.200 0.550 1.000"/>
+      <geom class="vis" mesh="esp32_devkitc" pos="-0.024000 0.007000 0.048000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.080 0.080 0.100 1.000"/>
+      <geom class="vis" mesh="mosfet_module" pos="0.000000 -0.010200 0.043000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.050 0.400 0.180 1.000"/>
+      <geom class="col" type="box" size="0.095 0.046 0.045" pos="0 0 -0.005"/>
+      <geom class="col" type="box" size="0.035 0.046 0.013" pos="0.0 0 0.053"/>
+      <body name="water" pos="0.000000 0.000000 -0.021800">
+        <inertial pos="0 0 0" mass="0.4000" diaginertia="2e-4 4e-4 5e-4"/>
+      </body>
+      <site name="imu" pos="-0.0155 0.030 0.006" size="0.004"/>
+      <camera name="onboard" pos="0.097 0 -0.012" xyaxes="0 -1 0 0.2 0 1" fovy="70"/>
+      <body name="FL_hip" pos="0.116000 0.028000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+        <inertial pos="0.018337 0.019683 -0.025122" mass="0.097766" fullinertia="6.5586e-05 4.9228e-05 3.2085e-05 -3.9145e-06 6.0114e-06 9.4643e-06"/>
+        <joint name="FL_hip_abd" class="ds" type="hinge" axis="1.0 0.0 0.0" range="-0.20944 0.43633"/>
+        <geom class="vis" mesh="shoulder_bracket_L" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.200 0.620 0.360 1.000"/>
+        <geom class="vis" mesh="servo_ds3218" pos="0.021000 0.047250 -0.045000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+        <geom class="vis" mesh="horn_ds3218" pos="-0.007500 0.000000 0.000000" quat="0.7071068 0.0000000 0.7071068 0.0000000" rgba="0.750 0.760 0.780 1.000"/>
+        <geom class="vis" mesh="bearing_625" pos="0.021000 -0.006750 -0.045000" quat="0.7071068 -0.7071068 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+        <body name="FL_femur" pos="0.021000 0.030000 -0.045000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+          <inertial pos="-0.000203 -0.004481 -0.066163" mass="0.119243" fullinertia="1.3974e-04 1.1171e-04 4.0554e-05 -6.3811e-07 -1.9852e-08 -1.7283e-05"/>
+          <joint name="FL_hip_pitch" class="ds" type="hinge" axis="0.0 1.0 0.0" range="-1.30900 1.04720"/>
+          <geom class="vis" mesh="femur_L" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+          <geom class="vis" mesh="servo_ds3218" pos="0.000000 0.017250 -0.090000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+          <geom class="vis" mesh="horn_ds3218" pos="0.000000 0.017250 0.000000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+          <geom class="vis" mesh="bearing_625" pos="0.000000 -0.036750 -0.090000" quat="0.7071068 -0.7071068 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+          <geom class="col" type="capsule" size="0.015" fromto="0 0 -0.030 0 0 -0.0780"/>
+          <body name="FL_tibia" pos="0.000000 0.000000 -0.090000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+            <inertial pos="0.000000 0.003937 -0.037598" mass="0.034486" fullinertia="5.3884e-05 4.4081e-05 1.2647e-05 1.7048e-14 2.3815e-13 -5.1049e-06"/>
+            <joint name="FL_knee" class="ds" type="hinge" axis="0.0 1.0 0.0" range="-2.18166 -0.17453"/>
+            <geom class="vis" mesh="tibia_L" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+            <geom class="vis" mesh="foot_pad" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.100 0.100 0.100 1.000"/>
+            <geom class="vis" mesh="horn_ds3218" pos="0.000000 0.017250 0.000000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+            <geom class="foot" name="FL_foot" type="sphere" size="0.0130" pos="0 0 -0.1000"/>
+            <geom class="col" type="capsule" size="0.009" fromto="0 0 -0.032 0 0 -0.082"/>
+            <site name="FL_foot_site" pos="0 0 -0.1000" size="0.014"/>
+          </body>
+        </body>
+      </body>
+      <body name="FR_hip" pos="0.116000 -0.028000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+        <inertial pos="0.018337 -0.019683 -0.025122" mass="0.097766" fullinertia="6.5586e-05 4.9228e-05 3.2085e-05 3.9145e-06 6.0114e-06 -9.4643e-06"/>
+        <joint name="FR_hip_abd" class="ds" type="hinge" axis="1.0 0.0 0.0" range="-0.43633 0.20944"/>
+        <geom class="vis" mesh="shoulder_bracket_R" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.200 0.620 0.360 1.000"/>
+        <geom class="vis" mesh="servo_ds3218" pos="0.021000 -0.047250 -0.045000" quat="0.5000000 0.5000000 -0.5000000 0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+        <geom class="vis" mesh="horn_ds3218" pos="-0.007500 0.000000 0.000000" quat="0.7071068 0.0000000 0.7071068 0.0000000" rgba="0.750 0.760 0.780 1.000"/>
+        <geom class="vis" mesh="bearing_625" pos="0.021000 0.006750 -0.045000" quat="0.7071068 0.7071068 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+        <body name="FR_femur" pos="0.021000 -0.030000 -0.045000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+          <inertial pos="-0.000203 0.004481 -0.066163" mass="0.119243" fullinertia="1.3974e-04 1.1171e-04 4.0554e-05 6.3811e-07 -1.9852e-08 1.7283e-05"/>
+          <joint name="FR_hip_pitch" class="ds" type="hinge" axis="0.0 1.0 0.0" range="-1.30900 1.04720"/>
+          <geom class="vis" mesh="femur_R" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+          <geom class="vis" mesh="servo_ds3218" pos="0.000000 -0.017250 -0.090000" quat="0.5000000 0.5000000 -0.5000000 0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+          <geom class="vis" mesh="horn_ds3218" pos="0.000000 -0.017250 0.000000" quat="0.5000000 0.5000000 -0.5000000 0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+          <geom class="vis" mesh="bearing_625" pos="0.000000 0.036750 -0.090000" quat="0.7071068 0.7071068 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+          <geom class="col" type="capsule" size="0.015" fromto="0 0 -0.030 0 0 -0.0780"/>
+          <body name="FR_tibia" pos="0.000000 0.000000 -0.090000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+            <inertial pos="0.000000 -0.003937 -0.037598" mass="0.034486" fullinertia="5.3884e-05 4.4081e-05 1.2647e-05 -1.7770e-14 2.3815e-13 5.1049e-06"/>
+            <joint name="FR_knee" class="ds" type="hinge" axis="0.0 1.0 0.0" range="-2.18166 -0.17453"/>
+            <geom class="vis" mesh="tibia_R" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+            <geom class="vis" mesh="foot_pad" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.100 0.100 0.100 1.000"/>
+            <geom class="vis" mesh="horn_ds3218" pos="0.000000 -0.017250 0.000000" quat="0.5000000 0.5000000 -0.5000000 0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+            <geom class="foot" name="FR_foot" type="sphere" size="0.0130" pos="0 0 -0.1000"/>
+            <geom class="col" type="capsule" size="0.009" fromto="0 0 -0.032 0 0 -0.082"/>
+            <site name="FR_foot_site" pos="0 0 -0.1000" size="0.014"/>
+          </body>
+        </body>
+      </body>
+      <body name="RL_hip" pos="-0.116000 0.028000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+        <inertial pos="-0.018337 0.019683 -0.025122" mass="0.097766" fullinertia="6.5586e-05 4.9228e-05 3.2085e-05 3.9145e-06 -6.0114e-06 9.4643e-06"/>
+        <joint name="RL_hip_abd" class="ds" type="hinge" axis="1.0 0.0 0.0" range="-0.20944 0.43633"/>
+        <geom class="vis" mesh="shoulder_bracket_R" pos="0.000000 0.000000 0.000000" quat="0.0000000 0.0000000 0.0000000 1.0000000" rgba="0.200 0.620 0.360 1.000"/>
+        <geom class="vis" mesh="servo_ds3218" pos="-0.021000 0.047250 -0.045000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+        <geom class="vis" mesh="horn_ds3218" pos="0.007500 -0.000000 0.000000" quat="0.0000000 -0.7071068 0.0000000 0.7071068" rgba="0.750 0.760 0.780 1.000"/>
+        <geom class="vis" mesh="bearing_625" pos="-0.021000 -0.006750 -0.045000" quat="0.0000000 0.0000000 0.7071068 0.7071068" rgba="0.550 0.560 0.580 1.000"/>
+        <body name="RL_femur" pos="-0.021000 0.030000 -0.045000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+          <inertial pos="0.000203 -0.004481 -0.066163" mass="0.119243" fullinertia="1.3974e-04 1.1171e-04 4.0554e-05 6.3811e-07 1.9852e-08 -1.7283e-05"/>
+          <joint name="RL_hip_pitch" class="ds" type="hinge" axis="0.0 1.0 0.0" range="-1.04720 1.30900"/>
+          <geom class="vis" mesh="femur_R" pos="0.000000 0.000000 0.000000" quat="0.0000000 0.0000000 0.0000000 1.0000000" rgba="0.930 0.930 0.900 1.000"/>
+          <geom class="vis" mesh="servo_ds3218" pos="0.000000 0.017250 -0.090000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+          <geom class="vis" mesh="horn_ds3218" pos="0.000000 0.017250 0.000000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+          <geom class="vis" mesh="bearing_625" pos="0.000000 -0.036750 -0.090000" quat="0.7071068 -0.7071068 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+          <geom class="col" type="capsule" size="0.015" fromto="0 0 -0.030 0 0 -0.0780"/>
+          <body name="RL_tibia" pos="0.000000 0.000000 -0.090000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+            <inertial pos="-0.000000 0.003937 -0.037598" mass="0.034486" fullinertia="5.3884e-05 4.4081e-05 1.2647e-05 -3.7910e-14 -5.3962e-13 -5.1049e-06"/>
+            <joint name="RL_knee" class="ds" type="hinge" axis="0.0 1.0 0.0" range="0.17453 2.18166"/>
+            <geom class="vis" mesh="tibia_R" pos="0.000000 0.000000 0.000000" quat="0.0000000 0.0000000 0.0000000 1.0000000" rgba="0.930 0.930 0.900 1.000"/>
+            <geom class="vis" mesh="foot_pad" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.100 0.100 0.100 1.000"/>
+            <geom class="vis" mesh="horn_ds3218" pos="0.000000 0.017250 0.000000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+            <geom class="foot" name="RL_foot" type="sphere" size="0.0130" pos="0 0 -0.1000"/>
+            <geom class="col" type="capsule" size="0.009" fromto="0 0 -0.032 0 0 -0.082"/>
+            <site name="RL_foot_site" pos="0 0 -0.1000" size="0.014"/>
+          </body>
+        </body>
+      </body>
+      <body name="RR_hip" pos="-0.116000 -0.028000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+        <inertial pos="-0.018337 -0.019683 -0.025122" mass="0.097766" fullinertia="6.5586e-05 4.9228e-05 3.2085e-05 -3.9145e-06 -6.0114e-06 -9.4643e-06"/>
+        <joint name="RR_hip_abd" class="ds" type="hinge" axis="1.0 0.0 0.0" range="-0.43633 0.20944"/>
+        <geom class="vis" mesh="shoulder_bracket_L" pos="0.000000 0.000000 0.000000" quat="0.0000000 0.0000000 0.0000000 1.0000000" rgba="0.200 0.620 0.360 1.000"/>
+        <geom class="vis" mesh="servo_ds3218" pos="-0.021000 -0.047250 -0.045000" quat="0.5000000 0.5000000 -0.5000000 0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+        <geom class="vis" mesh="horn_ds3218" pos="0.007500 -0.000000 0.000000" quat="0.0000000 -0.7071068 0.0000000 0.7071068" rgba="0.750 0.760 0.780 1.000"/>
+        <geom class="vis" mesh="bearing_625" pos="-0.021000 0.006750 -0.045000" quat="0.0000000 -0.0000000 -0.7071068 0.7071068" rgba="0.550 0.560 0.580 1.000"/>
+        <body name="RR_femur" pos="-0.021000 -0.030000 -0.045000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+          <inertial pos="0.000203 0.004481 -0.066163" mass="0.119243" fullinertia="1.3974e-04 1.1171e-04 4.0554e-05 -6.3811e-07 1.9852e-08 1.7283e-05"/>
+          <joint name="RR_hip_pitch" class="ds" type="hinge" axis="0.0 1.0 0.0" range="-1.04720 1.30900"/>
+          <geom class="vis" mesh="femur_L" pos="0.000000 0.000000 0.000000" quat="0.0000000 0.0000000 0.0000000 1.0000000" rgba="0.930 0.930 0.900 1.000"/>
+          <geom class="vis" mesh="servo_ds3218" pos="0.000000 -0.017250 -0.090000" quat="0.5000000 0.5000000 -0.5000000 0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+          <geom class="vis" mesh="horn_ds3218" pos="0.000000 -0.017250 0.000000" quat="0.5000000 0.5000000 -0.5000000 0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+          <geom class="vis" mesh="bearing_625" pos="0.000000 0.036750 -0.090000" quat="0.7071068 0.7071068 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+          <geom class="col" type="capsule" size="0.015" fromto="0 0 -0.030 0 0 -0.0780"/>
+          <body name="RR_tibia" pos="0.000000 0.000000 -0.090000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+            <inertial pos="-0.000000 -0.003937 -0.037598" mass="0.034486" fullinertia="5.3884e-05 4.4081e-05 1.2647e-05 3.7188e-14 -5.3962e-13 5.1049e-06"/>
+            <joint name="RR_knee" class="ds" type="hinge" axis="0.0 1.0 0.0" range="0.17453 2.18166"/>
+            <geom class="vis" mesh="tibia_L" pos="0.000000 0.000000 0.000000" quat="0.0000000 0.0000000 0.0000000 1.0000000" rgba="0.930 0.930 0.900 1.000"/>
+            <geom class="vis" mesh="foot_pad" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.100 0.100 0.100 1.000"/>
+            <geom class="vis" mesh="horn_ds3218" pos="0.000000 -0.017250 0.000000" quat="0.5000000 0.5000000 -0.5000000 0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+            <geom class="foot" name="RR_foot" type="sphere" size="0.0130" pos="0 0 -0.1000"/>
+            <geom class="col" type="capsule" size="0.009" fromto="0 0 -0.032 0 0 -0.082"/>
+            <site name="RR_foot_site" pos="0 0 -0.1000" size="0.014"/>
+          </body>
+        </body>
+      </body>
+      <body name="arm_turntable" pos="0.055000 0.000000 0.089500" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+        <inertial pos="-0.007362 0.005033 0.029588" mass="0.095129" fullinertia="4.5037e-05 3.9785e-05 3.7352e-05 -1.9216e-06 4.2747e-06 -1.9854e-06"/>
+        <joint name="arm_yaw" class="ds" type="hinge" axis="0.0 0.0 1.0" range="-2.09440 2.09440"/>
+        <geom class="vis" mesh="arm_turntable" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.200 0.620 0.360 1.000"/>
+        <geom class="vis" mesh="horn_ds3218" pos="0.000000 0.000000 -0.007500" quat="0.7071068 0.0000000 0.0000000 -0.7071068" rgba="0.750 0.760 0.780 1.000"/>
+        <geom class="vis" mesh="servo_ds3218" pos="0.000000 -0.017250 0.038500" quat="0.0000000 0.0000000 -0.7071068 0.7071068" rgba="0.080 0.080 0.090 1.000"/>
+        <geom class="vis" mesh="bearing_625" pos="0.000000 0.031750 0.038500" quat="0.7071068 -0.7071068 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+        <body name="arm_upper" pos="0.000000 0.000000 0.038500" quat="0.0000000 -0.7071068 0.0000000 0.7071068">
+          <inertial pos="-0.000191 -0.004425 -0.087915" mass="0.127449" fullinertia="2.4046e-04 2.1203e-04 4.2362e-05 -6.4283e-07 -2.2091e-07 -2.4655e-05"/>
+          <joint name="arm_shoulder" class="ds" type="hinge" axis="0.0 1.0 0.0" range="-0.47124 2.18166"/>
+          <geom class="vis" mesh="upper_arm" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.200 0.620 0.360 1.000"/>
+          <geom class="vis" mesh="servo_ds3218" pos="0.000000 0.017250 -0.120000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+          <geom class="vis" mesh="horn_ds3218" pos="0.000000 0.017250 0.000000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+          <geom class="vis" mesh="bearing_625" pos="0.000000 -0.036750 -0.120000" quat="0.7071068 -0.7071068 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+          <body name="arm_fore" pos="0.000000 0.000000 -0.120000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+            <inertial pos="0.000000 0.005691 -0.058525" mass="0.050627" fullinertia="1.1635e-04 1.0558e-04 1.4675e-05 0.0000e+00 0.0000e+00 -2.2280e-06"/>
+            <joint name="arm_elbow" class="ds" type="hinge" axis="0.0 1.0 0.0" range="-2.18166 0.26180"/>
+            <geom class="vis" mesh="forearm" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.200 0.620 0.360 1.000"/>
+            <geom class="vis" mesh="servo_mg90s" pos="0.000000 0.016750 -0.115000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.080 0.080 0.090 1.000"/>
+            <geom class="vis" mesh="horn_ds3218" pos="0.000000 0.017250 0.000000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+            <body name="arm_wrist" pos="0.000000 0.000000 -0.115000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+              <inertial pos="-0.002249 0.003883 -0.043304" mass="0.045314" fullinertia="3.3141e-05 1.7418e-05 2.3639e-05 -3.9576e-07 -7.8550e-08 -4.3754e-06"/>
+              <joint name="arm_wrist" class="mg" type="hinge" axis="0.0 1.0 0.0" range="-1.74533 1.74533"/>
+              <geom class="vis" mesh="gripper_base" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.200 0.620 0.360 1.000"/>
+              <geom class="vis" mesh="horn_mg90s" pos="0.000000 0.016750 0.000000" quat="0.5000000 -0.5000000 -0.5000000 -0.5000000" rgba="0.750 0.760 0.780 1.000"/>
+              <geom class="vis" mesh="servo_mg90s" pos="0.000000 0.000000 -0.048000" quat="0.0000000 0.7071068 0.7071068 0.0000000" rgba="0.080 0.080 0.090 1.000"/>
+              <geom class="vis" mesh="rod_3x74" pos="0.008000 0.000000 -0.066000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+              <geom class="vis" mesh="rod_3x74" pos="-0.008000 0.000000 -0.066000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.550 0.560 0.580 1.000"/>
+              <geom class="vis" mesh="nozzle_brass" pos="-0.020000 0.000000 -0.058000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.800 0.620 0.250 1.000"/>
+              <site name="tcp" pos="0 0 -0.0750" size="0.004" rgba="1 0 0 0.5"/>
+              <site name="nozzle_tip" pos="-0.0200 0 -0.0580" size="0.003" rgba="0 0.4 1 0.6"/>
+              <body name="jaw_a" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+                <inertial pos="0.002563 -0.002186 -0.067087" mass="0.004481" fullinertia="5.4409e-07 5.7296e-07 7.3782e-07 -1.3740e-07 -9.2872e-08 -8.0937e-08"/>
+                <joint name="grip_a" class="slide" type="slide" axis="0.0 -1.0 0.0" range="0.00000 0.02000"/>
+                <geom class="vis" mesh="gripper_jaw" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+                <geom class="finger" name="jaw_a_pad" type="box" size="0.011 0.0020 0.0105" pos="0 -0.0025 -0.0725"/>
+              </body>
+              <body name="jaw_b" pos="0.000000 0.000000 0.000000" quat="0.0000000 0.0000000 0.0000000 1.0000000">
+                <inertial pos="0.002563 -0.002186 -0.067087" mass="0.004481" fullinertia="5.4409e-07 5.7296e-07 7.3782e-07 -1.3740e-07 -9.2872e-08 -8.0937e-08"/>
+                <joint name="grip_b" class="slide" type="slide" axis="0.0 -1.0 0.0" range="0.00000 0.02000"/>
+                <geom class="vis" mesh="gripper_jaw" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+                <geom class="finger" name="jaw_b_pad" type="box" size="0.011 0.0020 0.0105" pos="0 -0.0025 -0.0725"/>
+              </body>
+              <body name="pinion" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000">
+                <inertial pos="-0.000000 0.000000 -0.057080" mass="0.003272" fullinertia="1.0283e-07 1.0283e-07 1.6453e-07 6.6113e-24 -2.3642e-22 -3.2378e-23"/>
+                <joint name="grip_pinion" class="mg" type="hinge" axis="0.0 0.0 1.0" range="-4.00000 4.00000"/>
+                <geom class="vis" mesh="gripper_pinion" pos="0.000000 0.000000 0.000000" quat="1.0000000 0.0000000 0.0000000 0.0000000" rgba="0.930 0.930 0.900 1.000"/>
+                <geom class="vis" mesh="horn_mg90s" pos="0.000000 0.000000 -0.048000" quat="0.0000000 0.7071068 0.7071068 0.0000000" rgba="0.750 0.760 0.780 1.000"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+  </worldbody>
+  <equality>
+    <joint joint1="grip_b" joint2="grip_a" polycoef="0 1 0 0 0" solref="0.004 1"/>
+    <joint joint1="grip_pinion" joint2="grip_a" polycoef="0 -100.000 0 0 0" solref="0.004 1"/>
+  </equality>
+  <actuator>
+    <motor name="FL_hip_abd" class="ds" joint="FL_hip_abd"/>
+    <motor name="FL_hip_pitch" class="ds" joint="FL_hip_pitch"/>
+    <motor name="FL_knee" class="ds" joint="FL_knee"/>
+    <motor name="FR_hip_abd" class="ds" joint="FR_hip_abd"/>
+    <motor name="FR_hip_pitch" class="ds" joint="FR_hip_pitch"/>
+    <motor name="FR_knee" class="ds" joint="FR_knee"/>
+    <motor name="RL_hip_abd" class="ds" joint="RL_hip_abd"/>
+    <motor name="RL_hip_pitch" class="ds" joint="RL_hip_pitch"/>
+    <motor name="RL_knee" class="ds" joint="RL_knee"/>
+    <motor name="RR_hip_abd" class="ds" joint="RR_hip_abd"/>
+    <motor name="RR_hip_pitch" class="ds" joint="RR_hip_pitch"/>
+    <motor name="RR_knee" class="ds" joint="RR_knee"/>
+    <motor name="arm_yaw" class="ds" joint="arm_yaw"/>
+    <motor name="arm_shoulder" class="ds" joint="arm_shoulder"/>
+    <motor name="arm_elbow" class="ds" joint="arm_elbow"/>
+    <motor name="arm_wrist" class="mg" joint="arm_wrist"/>
+    <motor name="grip_a" class="slide" joint="grip_a"/>
+  </actuator>
+  <sensor>
+    <accelerometer name="imu_acc" site="imu"/>
+    <gyro name="imu_gyro" site="imu"/>
+    <framequat name="imu_quat" objtype="site" objname="imu"/>
+    <touch name="FL_contact" site="FL_foot_site"/>
+    <touch name="FR_contact" site="FR_foot_site"/>
+    <touch name="RL_contact" site="RL_foot_site"/>
+    <touch name="RR_contact" site="RR_foot_site"/>
+    <actuatorfrc name="FL_hip_abd_tau" actuator="FL_hip_abd"/>
+    <actuatorfrc name="FL_hip_pitch_tau" actuator="FL_hip_pitch"/>
+    <actuatorfrc name="FL_knee_tau" actuator="FL_knee"/>
+    <actuatorfrc name="FR_hip_abd_tau" actuator="FR_hip_abd"/>
+    <actuatorfrc name="FR_hip_pitch_tau" actuator="FR_hip_pitch"/>
+    <actuatorfrc name="FR_knee_tau" actuator="FR_knee"/>
+    <actuatorfrc name="RL_hip_abd_tau" actuator="RL_hip_abd"/>
+    <actuatorfrc name="RL_hip_pitch_tau" actuator="RL_hip_pitch"/>
+    <actuatorfrc name="RL_knee_tau" actuator="RL_knee"/>
+    <actuatorfrc name="RR_hip_abd_tau" actuator="RR_hip_abd"/>
+    <actuatorfrc name="RR_hip_pitch_tau" actuator="RR_hip_pitch"/>
+    <actuatorfrc name="RR_knee_tau" actuator="RR_knee"/>
+    <actuatorfrc name="arm_yaw_tau" actuator="arm_yaw"/>
+    <actuatorfrc name="arm_shoulder_tau" actuator="arm_shoulder"/>
+    <actuatorfrc name="arm_elbow_tau" actuator="arm_elbow"/>
+    <actuatorfrc name="arm_wrist_tau" actuator="arm_wrist"/>
+  </sensor>
+</mujoco>

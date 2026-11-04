@@ -1,0 +1,59 @@
+[
+  {
+    "iter": 1,
+    "crawl": {
+      "period": 1.6,
+      "v_cmd": 0.06,
+      "margin": 20.0
+    },
+    "metrics": {
+      "speed_m_s": 0.0646,
+      "max_tilt_deg": 3.1817,
+      "peak_torque_frac_50ms": 0.9397,
+      "p99_torque_frac": 0.6556,
+      "turn_deg": 37.3619
+    },
+    "failing": [
+      "S-SIM-03 (0.94 vs 0.9)"
+    ],
+    "seconds": 30.4,
+    "action": "crawl period -> 1.728 s, v_cmd -> 0.051 m/s"
+  },
+  {
+    "iter": 2,
+    "crawl": {
+      "period": 1.728,
+      "v_cmd": 0.051,
+      "margin": 20.0
+    },
+    "metrics": {
+      "speed_m_s": 0.057,
+      "max_tilt_deg": 3.4364,
+      "peak_torque_frac_50ms": 0.9013,
+      "p99_torque_frac": 0.6321,
+      "turn_deg": 37.7168
+    },
+    "failing": [
+      "S-SIM-03 (0.901 vs 0.9)"
+    ],
+    "seconds": 17.2,
+    "action": "crawl period -> 1.866 s, v_cmd -> 0.0433 m/s"
+  },
+  {
+    "iter": 3,
+    "crawl": {
+      "period": 1.866,
+      "v_cmd": 0.0433,
+      "margin": 20.0
+    },
+    "metrics": {
+      "speed_m_s": 0.0519,
+      "max_tilt_deg": 3.6962,
+      "peak_torque_frac_50ms": 0.8639,
+      "p99_torque_frac": 0.6099,
+      "turn_deg": 37.3633
+    },
+    "failing": [],
+    "seconds": 14.9
+  }
+]
